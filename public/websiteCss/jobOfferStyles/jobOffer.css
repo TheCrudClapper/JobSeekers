@@ -1,0 +1,10 @@
+.form-container{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.job-listing:hover {
+    background: #0d6efd;
+}
+.job-description-container{
+    min-height: 400px;
+}
