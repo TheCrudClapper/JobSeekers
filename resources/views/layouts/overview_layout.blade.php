@@ -32,7 +32,7 @@
                     </div>
                     <hr class="w-100 p-0 m-0">
                     <div class="px-3 py-3">
-                        <a class="own-link-style">Job Application</a>
+                        <a class="own-link-style" href="/application/show-applications">Job Applications</a>
                     </div>
                     <hr class="w-100 p-0 m-0">
                     <div class="px-3 py-3">

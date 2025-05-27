@@ -33,3 +33,7 @@ body{
 .white-background{
     background-color: white;
 }
+.form-container{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}

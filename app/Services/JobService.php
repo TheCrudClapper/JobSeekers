@@ -4,7 +4,7 @@ use App\Helpers\ServiceResult;
 use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Validation\ValidationException;
 class JobService{
 
     public function create(Request $request) : ServiceResult {
@@ -173,7 +173,7 @@ class JobService{
             'JobTypeId' => 'required|int|max:40',
         ]);
         if ($validator->fails()) {
-            throw new \Illuminate\Validation\ValidationException($validator);
+            throw new ValidationException($validator);
         }
     }
 

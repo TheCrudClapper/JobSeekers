@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobOfferController;
 use Illuminate\Support\Facades\Route;
@@ -20,8 +21,14 @@ Route::get('/account/deleteAccount', [AccountController::class, 'deleteAccount']
 Route::get('/job/create', [JobOfferController::class, 'create'])->middleware('auth');
 Route::get('/job/user-jobs', [JobOfferController::class, 'userJobs'])->middleware('auth');
 Route::get('/job/edit-job/{id}', [JobOfferController::class, 'edit'])->middleware('auth');
-Route::get('/job/show-job/{id}', [JobOfferController::class, 'showJob'])->middleware('auth');
+Route::get('/job/show-job/{id}', [JobOfferController::class, 'showJob']);
 Route::post('/job/edit-job/{id}', [JobOfferController::class, 'editJob'])->middleware('auth');
 Route::post('/job/delete-job/{id}', [JobOfferController::class, 'deleteJob'])->middleware('auth');
 Route::post('/job/createJob', [JobOfferController::class, 'createJob'])->middleware('auth');
 Route::get('/job/job-browser', [JobOfferController::class, 'jobBrowser']);
+
+//Application Routes
+Route::get('/application/create', [ApplicationController::class, 'create'])->middleware('auth');
+Route::post('/application/createApplication/{id}', [ApplicationController::class, 'createApplication'])->middleware('auth');
+Route::get('/application/show-applications', [ApplicationController::class, 'showUserApplications'])->middleware('auth');
+Route::post('/application/delete-application/{id}', [ApplicationController::class, 'deleteApplication'])->middleware('auth');

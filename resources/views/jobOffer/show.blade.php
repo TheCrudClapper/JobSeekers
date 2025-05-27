@@ -31,9 +31,17 @@
                         {!! nl2br(e($job->Description)) !!}
                     </div>
                     <hr>
-                    <form class="m-0">
-                        <button type="submit" class="btn btn-primary">Apply</button>
-                    </form>
+                    @if($job->UserId != Auth::id())
+                        <form class="m-0" method="GET" action="/application/create">
+                            @csrf
+                            <input type="hidden" name="JobId" value="{{ $job->Id }}">
+                            <button type="submit" class="btn btn-primary">Apply</button>
+                        </form>
+                    @else
+                        <a href="/job/edit-job/{{ $job->Id }}" class="btn btn-primary">
+                            Edit
+                        </a>
+                    @endif
                 </div>
             </div>
             <div class="col-md-4">
@@ -50,7 +58,7 @@
                         </li>
                         <li class="mb-1">
                             <span class="fw-bold text-secondary">Location:</span>
-                            <span>{{ $job->Locatio }}</span>
+                            <span>{{ $job->Location }}</span>
                         </li>
                         <li class="mb-1">
                             <span class="fw-bold text-secondary">Salary:</span>

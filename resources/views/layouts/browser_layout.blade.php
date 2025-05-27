@@ -126,6 +126,18 @@
                 </form>
             </div>
             <div class="col-md-8">
+                @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Success !</strong> {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                @if(session('error'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Success !</strong> {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 <h6><span class="fw-bold">Job Listings</span> - {{ $jobs->count() }} found</h6>
                 <div class="bg-white shadow py-3 mb-4 rounded-2">
                     <div class="px-3">
